@@ -1,0 +1,70 @@
+Q1. What is Flask Framework? What are the advantages of Flask Framework?
+ANS. Flask is a web framework, it’s a Python module that lets you develop web applications easily. It’s has a small and easy-to-extend core: it’s a microframework 
+that doesn’t include an ORM (Object Relational Manager) or such features.
+It does have many cool features like url routing, template engine. It is a WSGI web app framework.
+
+Advantages of Flask
+.Scalable. Size is everything, and Flask's status as a microframework means that you can use it to grow a tech project such as a web app incredibly quickly. ...
+.Flexible. ...
+.Easy to negotiate. ...
+.Lightweight. ...
+.Documentation. ...
+.Not a lot of tools. ...
+.Difficult to get familiar with a larger Flask app. ...
+.Maintenance costs.
+
+
+Q2. Create a simple Flask application to display ‘Hello World!!’. Attach the screenshot of the output in
+Jupyter Notebook.
+ANS. 
+from flask import Flask
+
+app = Flask(__name__)
+@app.route("/hello_world1")
+def hello_world1():
+    return "<h1>Hello, World!1</h1>"
+
+
+
+
+Q3. What is App routing in Flask? Why do we use app routes?
+ans. App Routing means mapping the URLs to a specific function that will handle the logic for that URL. Modern web frameworks use more meaningful URLs to help 
+users remember the URLs and make navigation simpler.
+Example: In our application, the URL (“/”) is associated with the root URL.
+
+app = Flask(__name__) 
+@app.route('/test3')  #thsi is app route and this how do we use 
+def test3():
+    l = [1,2,3,4,5,5,6,7,8]
+    return 'thi is my first list is flask app {}'.format(l[5])
+
+
+
+Q4. Create a “/welcome” route to display the welcome message “Welcome to ABC Corporation” and a “/”
+route to show the following details:
+Company Name: ABC Corporation
+Location: India
+Contact Detail: 999-999-9999
+Attach the screenshot of the output in Jupyter Notebook.
+ANS. @app.route('/welcome')
+def welcome_msg():
+    return 'welcome to abc corporation '
+
+@app.route('/')
+def details():
+    return 'Company Name: ABC Corporation<br>Location: India<br>Contact Detail: 999-999-9999'
+
+
+
+
+Q5. What function is used in Flask for URL Building? Write a Python code to demonstrate the working of the
+url_for() function.
+ans. @app.route('/home')
+def home():
+    return 'this is my first function '
+    with app.test_request_context():
+        print(url_for('login'))
+
+
+
+
